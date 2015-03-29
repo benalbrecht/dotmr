@@ -1,15 +1,15 @@
 [DEFAULT]
-lib =
-    homeshick() {
-        $HOME/.homesick/repos/homeshick/bin/homeshick "$@"
-    }
-    link_castles() {
-        case "$MR_REPO" in
-        *.homesick*)
-            homeshick link -f ${MR_REPO##*/}
-            ;;
-        esac
-    }	
+lib = 
+	   homeshick() {
+	       $HOME/.homesick/repos/homeshick/bin/homeshick "$@"
+	   }
+	   link_castles() {
+	       case "$MR_REPO" in
+	       *.homesick*)
+	           homeshick link -f ${MR_REPO##*/}
+	           ;;
+	       esac
+	   }	
 post_checkout = link_castles
 post_update = link_castles
 
@@ -47,3 +47,6 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotssh.git'
 
 [.homesick/repos/dotansible]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotansible.git'
+
+[.homesick/repos/dotmr]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotmr.git'
