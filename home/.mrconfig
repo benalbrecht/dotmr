@@ -1,0 +1,49 @@
+[DEFAULT]
+lib =
+    homeshick() {
+        $HOME/.homesick/repos/homeshick/bin/homeshick "$@"
+    }
+    link_castles() {
+        case "$MR_REPO" in
+        *.homesick*)
+            homeshick link -f ${MR_REPO##*/}
+            ;;
+        esac
+    }	
+post_checkout = link_castles
+post_update = link_castles
+
+[.homesick/repos/homeshick]
+checkout = git clone 'git://github.com/andsens/homeshick.git' 'homeshick'
+skip = [ "$1" = push ]
+
+[.emacs.d]
+checkout = git clone 'https://github.com/syl20bnr/spacemacs.git' '.emacs.d'
+skip = [ "$1" = push ]
+
+[.homesick/repos/dotemacs]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotemacs.git'
+
+[.homesick/repos/dotfish]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotfish.git'
+
+[.homesick/repos/dotgit]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotgit.git'
+
+[.homesick/repos/dotkupfer]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotkupfer.git'
+
+[.homesick/repos/dotlein]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotlein.git'
+
+[.homesick/repos/dotnpm]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotnpm.git'
+
+[.homesick/repos/dotseafile]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotseafile.git'
+
+[.homesick/repos/dotssh]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotssh.git'
+
+[.homesick/repos/dotansible]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotansible.git'
