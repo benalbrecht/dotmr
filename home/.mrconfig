@@ -50,3 +50,6 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotansible.git'
 
 [.homesick/repos/dotmr]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotmr.git'
+
+[.homesick/repos/dotsymlinks]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotsymlinks.git'
