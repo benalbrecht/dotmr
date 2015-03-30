@@ -1,15 +1,25 @@
 [DEFAULT]
 lib = 
-	   homeshick() {
-	       $HOME/.homesick/repos/homeshick/bin/homeshick "$@"
-	   }
-	   link_castles() {
-	       case "$MR_REPO" in
-	       *.homesick/repos/dot*)
-	           homeshick link -f ${MR_REPO##*/}
-	           ;;
-	       esac
-	   }	
+   homeshick() {
+       $HOME/.homesick/repos/homeshick/bin/homeshick "$@"
+   }
+   link_castles() {
+       case "$MR_REPO" in
+       *.homesick/repos/dot*)
+           homeshick link -f ${MR_REPO##*/}
+           ;;
+       esac
+   }
+   hostname="$(hostname)"
+   on() {
+       for host in $@; do
+           if [ "$hostname" = "$host" ]; then
+               return 0
+           fi
+       done
+       return 1
+   }
+
 post_checkout = link_castles
 post_update = link_castles
 
@@ -35,6 +45,7 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotgit.git'
 
 [.homesick/repos/dotkupfer]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotkupfer.git'
+skip = on ovh server
 
 [.homesick/repos/dotlein]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotlein.git'
@@ -47,6 +58,7 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotnpm.git'
 
 [.homesick/repos/dotseafile]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotseafile.git'
+skip = on ovh server
 
 [.homesick/repos/dotssh]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotssh.git'
@@ -56,3 +68,4 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotsymlinks.git'
 
 [.homesick/repos/dotvimperator]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotvimperator.git'
+skip = on ovh server
