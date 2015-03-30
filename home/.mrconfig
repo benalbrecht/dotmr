@@ -53,3 +53,6 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotssh.git'
 
 [.homesick/repos/dotsymlinks]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotsymlinks.git'
+
+[.homesick/repos/dotvimperator]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotvimperator.git'
