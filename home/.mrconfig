@@ -5,7 +5,7 @@ lib =
 	   }
 	   link_castles() {
 	       case "$MR_REPO" in
-	       *.homesick*)
+	       *.homesick/repos/dot*)
 	           homeshick link -f ${MR_REPO##*/}
 	           ;;
 	       esac
