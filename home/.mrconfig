@@ -1,24 +1,24 @@
 [DEFAULT]
 lib = 
-   homeshick() {
-       $HOME/.homesick/repos/homeshick/bin/homeshick "$@"
-   }
-   link_castles() {
-       case "$MR_REPO" in
-       *.homesick/repos/dot*)
-           homeshick link -f ${MR_REPO##*/}
-           ;;
-       esac
-   }
-   hostname="$(hostname)"
-   on() {
-       for host in $@; do
-           if [ "$hostname" = "$host" ]; then
-               return 0
-           fi
-       done
-       return 1
-   }
+	  homeshick() {
+	      $HOME/.homesick/repos/homeshick/bin/homeshick "$@"
+	  }
+	  link_castles() {
+	      case "$MR_REPO" in
+	      *.homesick/repos/dot*)
+	          homeshick link -f ${MR_REPO##*/}
+	          ;;
+	      esac
+	  }
+	  hostname="$(hostname)"
+	  on() {
+	      for host in $@; do
+	          if [ "$hostname" = "$host" ]; then
+	              return 0
+	          fi
+	      done
+	      return 1
+	  }
 
 post_checkout = link_castles
 post_update = link_castles
@@ -31,6 +31,7 @@ skip = [ "$1" = push ]
 checkout = git clone 'https://github.com/syl20bnr/spacemacs.git' '.emacs.d'
 skip = [ "$1" = push ]
 
+# my dotfiles
 [.homesick/repos/dotansible]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotansible.git'
 
@@ -69,3 +70,16 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotsymlinks.git'
 [.homesick/repos/dotvimperator]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotvimperator.git'
 skip = on ovh server
+
+# misc repos
+[.homesick/repos/dircolors-solarized]
+checkout = git clone 'git://github.com/seebi/dircolors-solarized.git' 'dircolors-solarized'
+skip = [ "$1" = push ]
+
+[.homesick/repos/gnome-terminal-colors]
+checkout = git clone 'https://github.com/gnumoksha/gnome-terminal-colors' 'gnome-terminal-colors'
+skip = on ovh server || [ "$1" = push ]
+
+[.homesick/repos/oh-my-fish]
+checkout = git clone 'git://github.com/bpinto/oh-my-fish.git' 'oh-my-fish'
+skip = [ "$1" = push ]
