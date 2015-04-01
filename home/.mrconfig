@@ -26,6 +26,7 @@ post_update = link_castles
 [.homesick/repos/homeshick]
 checkout = git clone 'git://github.com/andsens/homeshick.git' 'homeshick'
 skip = [ "$1" = push ]
+order = 1
 
 [.emacs.d]
 checkout = git clone 'https://github.com/syl20bnr/spacemacs.git' '.emacs.d'
