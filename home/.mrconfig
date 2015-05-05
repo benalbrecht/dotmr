@@ -45,6 +45,10 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotfish.git'
 [.homesick/repos/dotgit]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotgit.git'
 
+[.homesick/repos/dotkde]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotkde.git'
+skip = on ovh server
+
 [.homesick/repos/dotkupfer]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotkupfer.git'
 skip = on ovh server
