@@ -80,3 +80,9 @@ skip = on ovh server || [ "$1" = push ]
 [.homesick/repos/oh-my-fish]
 checkout = git clone 'git://github.com/bpinto/oh-my-fish.git' 'oh-my-fish'
 skip = [ "$1" = push ]
+
+[.homesick/repos/bass]
+checkout = git clone 'https://github.com/edc/bass.git' 'bass'
+skip = [ "$1" = push ]
+post_checkout = cd $MR_REPO && make install
+post_update = cd $MR_REPO && make install
