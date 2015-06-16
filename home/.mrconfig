@@ -35,22 +35,26 @@ skip = [ "$1" = push ]
 # my dotfiles
 [.homesick/repos/dotansible]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotansible.git'
+skip = on proto
 
 [.homesick/repos/dotemacs]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotemacs.git'
 
 [.homesick/repos/dotfish]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotfish.git'
+skip = on proto
 
 [.homesick/repos/dotgit]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotgit.git'
+skip = on proto
 
 [.homesick/repos/dotgnupg]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotgnupg.git'
+skip = on proto
 
 [.homesick/repos/dotkde]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotkde.git'
-skip = on ovh server
+skip = on ovh server proto
 
 [.homesick/repos/dotlein]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotlein.git'
@@ -60,16 +64,19 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotmr.git'
 
 [.homesick/repos/dotnpm]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotnpm.git'
+skip = on proto
 
 [.homesick/repos/dotssh]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotssh.git'
+skip = on proto
 
 [.homesick/repos/dotsymlinks]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotsymlinks.git'
+skip = on proto
 
 [.homesick/repos/dotvimperator]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotvimperator.git'
-skip = on ovh server
+skip = on ovh server proto
 
 # misc repos
 [.homesick/repos/dircolors-solarized]
@@ -78,18 +85,18 @@ skip = [ "$1" = push ]
 
 [.homesick/repos/gnome-terminal-colors]
 checkout = git clone 'https://github.com/gnumoksha/gnome-terminal-colors' 'gnome-terminal-colors'
-skip = on ovh server || [ "$1" = push ]
+skip = on ovh server proto || [ "$1" = push ]
 
 [.homesick/repos/oh-my-fish]
 checkout = git clone 'git://github.com/bpinto/oh-my-fish.git' 'oh-my-fish'
-skip = [ "$1" = push ]
+skip = [ "$1" = push ] || on proto
 
 [.homesick/repos/oh-my-fish/themes/budspencer]
 checkout = git clone 'https://github.com/oh-my-fish/theme-budspencer' 'budspencer'
-skip = [ "$1" = push ]
+skip = [ "$1" = push ] || on proto
 
 [.homesick/repos/bass]
 checkout = git clone 'https://github.com/edc/bass.git' 'bass'
-skip = [ "$1" = push ]
+skip = [ "$1" = push ] || on proto
 post_checkout = cd $MR_REPO && make install
 post_update = cd $MR_REPO && make install
