@@ -38,6 +38,10 @@ skip = [ "$1" = push ]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotansible.git'
 skip = on proto
 
+[.homesick/repos/dotbim]
+checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotbim.git'
+skip = ! on proto
+
 [.homesick/repos/dotemacs]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotemacs.git'
 
