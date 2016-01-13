@@ -43,7 +43,7 @@ checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotbim.git'
 skip = ! on proto
 
 [.homesick/repos/dotemacs]
-checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotemacs.git'
+checkout = homeshick clone -b 'ssh://git@code.bimsystems.de:7999/dotfiles/dotemacs.git'
 
 [.homesick/repos/dotfish]
 checkout = homeshick clone -b 'ben@7c0.de:/srv/git/dotfish.git'
