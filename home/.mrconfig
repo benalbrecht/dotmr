@@ -30,7 +30,7 @@ skip = [ "$1" = push ]
 order = 1
 
 [.emacs.d]
-checkout = git clone 'https://github.com/syl20bnr/spacemacs.git' --branch release-0.103 '.emacs.d'
+checkout = git clone 'https://github.com/syl20bnr/spacemacs.git' --branch release-0.105 '.emacs.d'
 skip = [ "$1" = push ]
 
 # my dotfiles
